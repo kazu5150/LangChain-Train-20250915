@@ -16,7 +16,3 @@ messages = [
 
 for chunk in model.stream(messages):
     print(chunk.content, end="", flush=True)
-    
-# 最後に改行を追加
- 
- 
