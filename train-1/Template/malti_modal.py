@@ -12,7 +12,7 @@ prompt = ChatPromptTemplate.from_messages(
             "user",
             [
                 {"type": "text", "text": "画像を説明してください"},
-                {"type": "image_url", "image_url": {"url":"{image_url}"}},
+                {"type": "image_url", "image_url": {"url": "{image_url}"}},
             ],
         )
     ]    
