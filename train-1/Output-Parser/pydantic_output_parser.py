@@ -1,9 +1,3 @@
-# output_parser_demo_jp.py
-# ------------------------------------------------------------
-# 必要: pip install langchain-core langchain-openai pydantic
-# 環境変数: export OPENAI_API_KEY=sk-...
-# ------------------------------------------------------------
-
 from pydantic import BaseModel, Field
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -30,10 +24,11 @@ prompt = ChatPromptTemplate.from_template(
     "あなたは料理アシスタントです。\n"
     "以下の料理名に対して、シンプルなレシピを考えてください。\n"
     "必ず次のフォーマットに従って、**JSONのみ**を出力してください。\n\n"
-    "{format_instructions}\n"
+    # "{format_instructions}\n"
     "重要:\n"
     "- JSON以外の説明文やコードブロックは一切出力しないでください。\n"
     "- 材料は文字列の配列、手順も文字列の配列で書いてください。\n\n"
+    "{format_instructions}\n"
     "料理名: {dish}"
 )
 
@@ -46,7 +41,7 @@ chain = prompt | llm | parser
 
 if __name__ == "__main__":
     # 7) 実行（お好きな料理名をどうぞ）
-    dish = "パエリア"
+    dish = input("料理名を入力してください: ")
     result: Recipe = chain.invoke({
         "dish": dish,
         "format_instructions": format_instructions
@@ -55,10 +50,12 @@ if __name__ == "__main__":
     # 8) Pydanticモデルとして安全に扱える
     print("== 解析結果 ==")
     print(result.model_dump_json(indent=2))
+    print("\n")
 
     print("\n== 材料 ==")
     for i, ing in enumerate(result.ingredients, 1):
         print(f"{i}. {ing}")
+    print("\n")
 
     print("\n== 手順 ==")
     for i, step in enumerate(result.steps, 1):
