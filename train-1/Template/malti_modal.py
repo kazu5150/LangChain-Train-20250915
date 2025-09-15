@@ -18,7 +18,7 @@ prompt = ChatPromptTemplate.from_messages(
     ]    
 )
 
-image_url = "https://pbs.twimg.com/media/GnW_apea4AAEP01?format=jpg&name=large"
+image_url = "https://preview.redd.it/which-star-wars-character-s-do-you-look-up-to-v0-gx03vrb3poza1.jpg?width=1080&crop=smart&auto=webp&s=a16f1b9e4165ffdb32e6f80782290fe728c38687"
 # image_url = "https://cdn.sanity.io/images/9r24npb8/production/53c1c9b96a9a9560b3377b609154f5f2a9bf5da4-1200x630.jpg?auto=format&fit=max&q=75&w=1200"
 prompt_value = prompt.invoke({"image_url": image_url})
 print(prompt_value)
