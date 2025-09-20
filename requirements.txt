@@ -11,3 +11,6 @@ requests
 aiohttp
 faiss-cpu        # ローカルに簡単にベクトル検索を実装
 chromadb         # 軽量なローカルDB
+tiktoken
+google-search-results
+numexpr
