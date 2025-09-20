@@ -14,3 +14,6 @@ chromadb         # 軽量なローカルDB
 tiktoken
 google-search-results
 numexpr
+wikipedia
+matplotlib
+numpy
