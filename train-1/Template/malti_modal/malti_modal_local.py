@@ -10,10 +10,11 @@ load_dotenv()
 def encode_image(image_path: str) -> str:
     with open(image_path, "rb") as f:
         encoded = base64.b64encode(f.read()).decode("utf-8")
-    return f"data:image/jpeg;base64,{encoded}"  # pngなら image/png
+    # return f"data:image/jpeg;base64,{encoded}"  # pngなら image/png
+    return f"data:image/png;base64,{encoded}"  # pngなら image/png
 
 # ここにローカル画像のパスを指定
-image_path = "image/sample.jpeg"
+image_path = "image/ironman.png"b
 image_base64 = encode_image(image_path)
 
 # 2. プロンプト作成

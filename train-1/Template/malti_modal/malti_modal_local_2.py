@@ -22,7 +22,7 @@ prompt = ChatPromptTemplate.from_messages(
         (
             "user",
             [
-                {"type": "text", "text": "この画像を解析して、顧客名、案件名、出荷日、出荷方法を抽出してください。"},
+                {"type": "text", "text": "この画像を解析して、取得できた値を構造化して出力してください。"},
                 {"type": "image_url", "image_url": {"url": image_base64}},
             ],
         )
