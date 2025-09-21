@@ -17,3 +17,5 @@ numexpr
 wikipedia
 matplotlib
 numpy
+pandas
+openpyxl
