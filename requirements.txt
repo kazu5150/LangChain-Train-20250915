@@ -19,3 +19,6 @@ matplotlib
 numpy
 pandas
 openpyxl
+langgraph
+langsmith
+ipython
